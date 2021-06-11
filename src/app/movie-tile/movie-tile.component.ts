@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppServiceService } from '../app-service.service';
+import { Imovie } from '../interfaces/movies';
+
 
 @Component({
   selector: 'flop-movie-tile',
@@ -9,7 +11,7 @@ import { AppServiceService } from '../app-service.service';
 export class MovieTileComponent implements OnInit {
   // @Input() title = '';
   // @Input() yearRelease = 0;
-  @Input() movie = {
+  @Input() movie: Imovie = {
     title: "",
     yearReleased: 0
   };
@@ -21,8 +23,8 @@ export class MovieTileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onAddMovieToRentals() {
-    this.appService.addMovieToRentalsList();
+  onAddMovieToRentals(movie: Imovie) {
+    this.appService.addMovieToRentalsList(movie);
   }
 
 }

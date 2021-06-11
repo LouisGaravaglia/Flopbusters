@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Imovie } from './interfaces/movies';
+
 // let moviesList =  require('./moviesList.js');
 
 @Component({
@@ -8,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Flopbusters';
-  moviesList = [
+  moviesList: Imovie[] = [
     {
       title: "Batman and Robin",
       yearReleased: 1996,

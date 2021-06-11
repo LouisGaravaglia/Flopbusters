@@ -1,4 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AppServiceService } from 'src/app/app-service.service';
+import { Imovie } from '../../interfaces/movies';
+
 
 @Component({
   selector: 'flop-rental-list',
@@ -7,8 +10,14 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class RentalListComponent implements OnInit {
   // @Output() clearRentalList = new EventEmitter();
+  rentalsList: Imovie[] = [{
+    title: "",
+    yearReleased: 0
+  }];
 
-  constructor() { }
+  constructor(private appService: AppServiceService) { 
+    this.rentalsList = appService.rentalsList;
+  }
 
   ngOnInit(): void {
   }

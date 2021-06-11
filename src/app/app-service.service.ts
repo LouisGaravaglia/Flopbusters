@@ -1,17 +1,16 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output } from '@angular/core';
+import { Imovie } from './interfaces/movies';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppServiceService {
-  rentalsList: object[] = [];
+  rentalsList: Imovie[] = [];
 
   constructor() { }
 
-  addMovieToRentalsList() {
-    console.log("adding movie");
-    
-    // this.rentalsList.push(movie)
+  addMovieToRentalsList(movie: Imovie) {
+    this.rentalsList.push(movie)
   }
 
   clearRentalList() {
