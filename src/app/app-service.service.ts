@@ -14,6 +14,11 @@ export class AppServiceService {
   }
 
   clearRentalList() {
+    console.log("in app service for clear");
+    console.log(this.rentalsList);
+    
     this.rentalsList = [];
+  console.log(this.rentalsList);
+  
   }
 }

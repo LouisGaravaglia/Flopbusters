@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AppServiceService } from '../app-service.service';
 import { Imovie } from '../interfaces/movies';
 
@@ -11,12 +11,13 @@ import { Imovie } from '../interfaces/movies';
 export class MovieTileComponent implements OnInit {
   // @Input() title = '';
   // @Input() yearRelease = 0;
+  @Output() addMovieToRentalsList = new EventEmitter()
   @Input() movie: Imovie = {
     title: "",
     yearReleased: 0
   };
 
-  constructor(private appService: AppServiceService) {
+  constructor() {
 
   }
 
@@ -24,7 +25,7 @@ export class MovieTileComponent implements OnInit {
   }
 
   onAddMovieToRentals(movie: Imovie) {
-    this.appService.addMovieToRentalsList(movie);
+    this.addMovieToRentalsList.emit(movie)
   }
 
 }

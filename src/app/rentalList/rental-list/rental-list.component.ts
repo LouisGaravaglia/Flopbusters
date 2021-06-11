@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { AppServiceService } from 'src/app/app-service.service';
 import { Imovie } from '../../interfaces/movies';
 
@@ -9,21 +9,27 @@ import { Imovie } from '../../interfaces/movies';
   styleUrls: ['./rental-list.component.css']
 })
 export class RentalListComponent implements OnInit {
-  // @Output() clearRentalList = new EventEmitter();
-  rentalsList: Imovie[] = [{
+  @Output() clearRentalsList = new EventEmitter();
+  @Input() rentalsList: Imovie[] = [{
     title: "",
     yearReleased: 0
   }];
+  // rentalsList: Imovie[] = [{
+  //   title: "",
+  //   yearReleased: 0
+  // }];
 
-  constructor(private appService: AppServiceService) { 
-    this.rentalsList = appService.rentalsList;
-  }
+  // constructor(private appService: AppServiceService) { 
+  //   this.rentalsList = appService.rentalsList;
+  // }
 
   ngOnInit(): void {
   }
 
-  // onClearRentalsClick() {
-  //   this.clearRentalList.emit();
-  // }
+  onClearRentalsClick() {
+    console.log("clicked clear");
+    
+    this.clearRentalsList.emit()
+  }
 
 }

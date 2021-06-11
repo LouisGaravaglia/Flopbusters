@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppServiceService } from './app-service.service';
 import { Imovie } from './interfaces/movies';
 
 // let moviesList =  require('./moviesList.js');
@@ -28,4 +29,16 @@ export class AppComponent {
       yearReleased: 1990,
     }
   ];
+
+  constructor(public rentalsListService: AppServiceService) {
+
+  }
+
+  addMovieToRentals(movie: Imovie) {
+    this.rentalsListService.addMovieToRentalsList(movie);
+  }
+
+  clearRentals() {
+    this.rentalsListService.clearRentalList();
+  }
 }
