@@ -2,9 +2,11 @@
 <flop-rental-list 
   [rentalsList]='rentalsListService.rentalsList'
   (clearRentalsList)='clearRentals()'
-></flop-rental-list>
+>
+</flop-rental-list>
 <flop-movie-tile
   *ngFor='let movie of moviesList'
   [movie]='movie'
   (addMovieToRentalsList)='addMovieToRentals($event)'
-></flop-movie-tile>
+>
+</flop-movie-tile>

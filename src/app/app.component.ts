@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { AppServiceService } from './app-service.service';
 import { Imovie } from './interfaces/movies';
 
-// let moviesList =  require('./moviesList.js');
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

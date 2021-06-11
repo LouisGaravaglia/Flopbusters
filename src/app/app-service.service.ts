@@ -1,4 +1,4 @@
-import { Injectable, Output } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Imovie } from './interfaces/movies';
 
 @Injectable({
@@ -9,16 +9,14 @@ export class AppServiceService {
 
   constructor() { }
 
-  addMovieToRentalsList(movie: Imovie) {
-    this.rentalsList.push(movie)
+  addMovieToRentalsList(newMovie: Imovie) {
+    for (let movie of this.rentalsList) {
+      if (movie.title === newMovie.title) return;
+    }
+    this.rentalsList.push(newMovie)
   }
 
   clearRentalList() {
-    console.log("in app service for clear");
-    console.log(this.rentalsList);
-    
     this.rentalsList = [];
-  console.log(this.rentalsList);
-  
   }
 }
