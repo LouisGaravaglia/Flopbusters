@@ -6,7 +6,7 @@
             <ul class="list-unstyled mt-3 mb-4">
               <li>{{movie.year}}</li>
             </ul>
-            <button type="button" class="w-10 btn btn-lg btn-outline-primary" (click)="onAddMovieToRentals(movie)">Rent</button>
+                <flop-rent-button [movie]="movie" (rentButtonClicked)="onAddMovieToRentals(movie)"></flop-rent-button>
           </div>
         </div>
       </div>
