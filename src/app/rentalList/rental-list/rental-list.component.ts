@@ -10,7 +10,7 @@ export class RentalListComponent implements OnInit {
   @Output() clearRentalsList = new EventEmitter();
   @Input() rentalsList: Imovie[] = [{
     title: "",
-    yearReleased: 0
+    year: 0
   }];
 
   ngOnInit(): void {

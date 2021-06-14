@@ -10,11 +10,11 @@ import { Imovie } from '../interfaces/movies';
 })
 export class MovieTileComponent implements OnInit {
   // @Input() title = '';
-  // @Input() yearRelease = 0;
+  // @Input() year = 0;
   @Output() addMovieToRentalsList = new EventEmitter()
   @Input() movie: Imovie = {
     title: "",
-    yearReleased: 0
+    year: 0
   };
 
   constructor() {

@@ -1,13 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Imovie } from './interfaces/movies';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppServiceService {
   rentalsList: Imovie[] = [];
+  availableMovies: Imovie[] = [];
 
-  constructor() { }
+  constructor(private http: HttpClient) { 
+
+  }
+
+  ngOnInit() {
+
+  }
+
+  getAvailableMovies() {
+    return this.http.get('http://localhost:3000/movies');
+
+  }
 
   addMovieToRentalsList(newMovie: Imovie) {
     for (let movie of this.rentalsList) {
