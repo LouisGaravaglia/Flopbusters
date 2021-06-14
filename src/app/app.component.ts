@@ -27,11 +27,18 @@ export class AppComponent {
       year: 1990,
     }
   ];
+  moviesList$: any;
 
   constructor(public rentalsListService: AppServiceService) {
-    rentalsListService.getAvailableMovies().subscribe((movies: any) => {
-      this.moviesList = movies;
-    });
+
+  }
+
+  ngOnInit() {
+    this.moviesList$ = this.rentalsListService.getAvailableMovies()
+    // INSTEAD OF SUBSCRIBING I'M USING THE ASYNC PIP AND MOVIESLIST$ OBSERVALBLE VARIABLE
+    // .subscribe((movies: any) => {
+    //   this.moviesList = movies;
+    // });
   }
 
   addMovieToRentals(movie: Imovie) {

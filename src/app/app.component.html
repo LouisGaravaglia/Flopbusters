@@ -5,7 +5,7 @@
 >
 </flop-rental-list>
 <flop-movie-tile
-  *ngFor='let movie of moviesList'
+  *ngFor='let movie of moviesList$ | async'
   [movie]='movie'
   (addMovieToRentalsList)='addMovieToRentals($event)'
 >
