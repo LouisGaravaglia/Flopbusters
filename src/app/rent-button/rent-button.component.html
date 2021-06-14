@@ -1,2 +1,2 @@
-<button type="button" class="w-10 btn btn-lg btn-outline-primary" (click)="handleRentButtonClick(movie)">Rent</button>
+<button type="button" class="w-10 btn btn-lg btn-outline-primary" [ngClass]="{'btn-outline-danger': hoveredButton, 'btn-sm': hoveredButton }" (click)="handleRentButtonClick(movie)">Rent</button>
 
