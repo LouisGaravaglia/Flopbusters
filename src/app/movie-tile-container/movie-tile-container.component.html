@@ -1,0 +1,11 @@
+
+
+<p>Hello</p>
+<flop-movie-tile
+  *ngFor='let movie of moviesList$ | async'
+  [movie]='movie'
+  (addMovieToRentalsList)='addMovieToRentals($event)'
+>
+</flop-movie-tile>
+<p>{{title}}</p>
+<p>Test</p>

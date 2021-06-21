@@ -23,6 +23,8 @@ export class AppServiceService {
   }
 
   addMovieToRentalsList(newMovie: Imovie) {
+    console.log("adding movie in service", newMovie);
+    
     for (let movie of this.rentalsList) {
       if (movie.title === newMovie.title) return;
     }

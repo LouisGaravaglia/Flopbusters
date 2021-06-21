@@ -1,12 +1,4 @@
 <flop-landing-section></flop-landing-section>
-<flop-rental-list 
-  [rentalsList]='rentalsListService.rentalsList'
-  (clearRentalsList)='clearRentals()'
->
-</flop-rental-list>
-<flop-movie-tile
-  *ngFor='let movie of moviesList$ | async'
-  [movie]='movie'
-  (addMovieToRentalsList)='addMovieToRentals($event)'
->
-</flop-movie-tile>
+
+
+<router-outlet></router-outlet>

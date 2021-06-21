@@ -10,6 +10,7 @@ import { RentalListComponent } from './rentalList/rental-list/rental-list.compon
 import { LandingSectionComponent } from './landing-section/landing-section.component';
 import { MovieTileComponent } from './movie-tile/movie-tile.component';
 import { RentButtonComponent } from './rent-button/rent-button.component';
+import { MovieTileContainerComponent } from './movie-tile-container/movie-tile-container.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RentButtonComponent } from './rent-button/rent-button.component';
     RentalListComponent,
     LandingSectionComponent,
     MovieTileComponent,
-    RentButtonComponent
+    RentButtonComponent,
+    MovieTileContainerComponent
   ],
   imports: [
     BrowserModule,
