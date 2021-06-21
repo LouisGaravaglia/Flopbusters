@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
 import { Imovie } from '../../interfaces/movies';
 import { AppServiceService } from '../../app-service.service';
 
@@ -8,10 +8,9 @@ import { AppServiceService } from '../../app-service.service';
 @Component({
   selector: 'flop-rental-list',
   templateUrl: './rental-list.component.html',
-  styleUrls: ['./rental-list.component.css'],
-  providers: [AppServiceService]
-})
-export class RentalListComponent implements OnInit {
+  styleUrls: ['./rental-list.component.css']
+  })
+export class RentalListComponent implements OnInit, OnChanges {
   @Output() clearRentalsList = new EventEmitter();
   @Input() rentalsList: Imovie[] = [{
     title: "",
@@ -20,9 +19,13 @@ export class RentalListComponent implements OnInit {
 
   constructor(public rentalsListService: AppServiceService) {}
 
+  ngOnChanges(): void {
+    this.rentalsList = this.rentalsListService.rentalsList;
+  }
 
   ngOnInit(): void {
     this.rentalsList = this.rentalsListService.rentalsList;
+    console.log("rentalsList = ", this.rentalsListService.rentalsList);
   }
 
   onClearRentalsClick() {

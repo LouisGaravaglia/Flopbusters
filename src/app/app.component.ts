@@ -5,7 +5,8 @@ import { Imovie } from './interfaces/movies';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [AppServiceService]
 })
 export class AppComponent {
   title = 'Flopbusters';
@@ -33,18 +34,18 @@ export class AppComponent {
   constructor(public rentalsListService: AppServiceService) {}
 
   ngOnInit() {
-    this.moviesList$ = this.rentalsListService.getAvailableMovies()
+    // this.moviesList$ = this.rentalsListService.getAvailableMovies()
     // INSTEAD OF SUBSCRIBING I'M USING THE ASYNC PIP AND MOVIESLIST$ OBSERVALBLE VARIABLE
     // .subscribe((movies: any) => {
     //   this.moviesList = movies;
     // });
   }
 
-  addMovieToRentals(movie: Imovie) {
-    this.rentalsListService.addMovieToRentalsList(movie);
-  }
+  // addMovieToRentals(movie: Imovie) {
+  //   this.rentalsListService.addMovieToRentalsList(movie);
+  // }
 
-  clearRentals() {
-    this.rentalsListService.clearRentalList();
-  }
+  // clearRentals() {
+  //   this.rentalsListService.clearRentalList();
+  // }
 }

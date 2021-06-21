@@ -5,8 +5,7 @@ import { Imovie } from '../interfaces/movies';
 @Component({
   selector: 'flop-movie-tile-container',
   templateUrl: './movie-tile-container.component.html',
-  styleUrls: ['./movie-tile-container.component.css'],
-  providers: [AppServiceService]
+  styleUrls: ['./movie-tile-container.component.css']
 })
 export class MovieTileContainerComponent implements OnInit {
   title = 'Flopbusters';
