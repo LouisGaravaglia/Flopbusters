@@ -5,8 +5,7 @@ import { Imovie } from './interfaces/movies';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [AppServiceService]
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Flopbusters';

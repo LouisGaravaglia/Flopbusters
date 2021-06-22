@@ -12,6 +12,9 @@ import { MovieTileComponent } from './movie-tile/movie-tile.component';
 import { RentButtonComponent } from './rent-button/rent-button.component';
 import { MovieTileContainerComponent } from './movie-tile-container/movie-tile-container.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RentalListService } from './rentalList/rental-list/rental-list.service';
+import { AppServiceService } from './app-service.service';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AppServiceService, RentalListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
