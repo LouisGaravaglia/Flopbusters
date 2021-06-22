@@ -11,6 +11,7 @@ import { LandingSectionComponent } from './landing-section/landing-section.compo
 import { MovieTileComponent } from './movie-tile/movie-tile.component';
 import { RentButtonComponent } from './rent-button/rent-button.component';
 import { MovieTileContainerComponent } from './movie-tile-container/movie-tile-container.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MovieTileContainerComponent } from './movie-tile-container/movie-tile-c
     LandingSectionComponent,
     MovieTileComponent,
     RentButtonComponent,
-    MovieTileContainerComponent
+    MovieTileContainerComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
