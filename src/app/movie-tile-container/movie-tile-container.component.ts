@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppServiceService } from '../app-service.service';
+import { RentalListService } from '../rentalList/rental-list/rental-list.service';
 import { Imovie } from '../interfaces/movies';
 
 @Component({
@@ -30,10 +31,13 @@ export class MovieTileContainerComponent implements OnInit {
   // ];
 
 
-  constructor(public rentalsListService: AppServiceService) {}
+  constructor(
+    private appService: AppServiceService, 
+    private rentalService: RentalListService
+    ) {}
 
   ngOnInit() {
-    this.moviesList$ = this.rentalsListService.getAvailableMovies()
+    this.moviesList$ = this.appService.getAvailableMovies()
     // INSTEAD OF SUBSCRIBING I'M USING THE ASYNC PIP AND MOVIESLIST$ OBSERVALBLE VARIABLE
     // .subscribe((movies: any) => {
     //   this.moviesList = movies;
@@ -41,12 +45,12 @@ export class MovieTileContainerComponent implements OnInit {
   }
 
   addMovieToRentals(movie: Imovie) {
-    this.rentalsListService.addMovieToRentalsList(movie);
+    this.rentalService.addMovieToRentalsList(movie);
     console.log("adding movie to rentals!");
     
   }
 
-  clearRentals() {
-    this.rentalsListService.clearRentalList();
-  }
+  // clearRentals() {
+  //   this.rentalsListService.clearRentalList();
+  // }
 }

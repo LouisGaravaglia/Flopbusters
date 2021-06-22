@@ -6,7 +6,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AppServiceService {
-  rentalsList: Imovie[] = [];
   availableMovies: Imovie[] = [];
 
   constructor(private http: HttpClient) { 
@@ -22,16 +21,7 @@ export class AppServiceService {
 
   }
 
-  addMovieToRentalsList(newMovie: Imovie) {
-    console.log("adding movie in service", this.rentalsList);
-    
-    for (let movie of this.rentalsList) {
-      if (movie.title === newMovie.title) return;
-    }
-    this.rentalsList.push(newMovie)
-  }
 
-  clearRentalList() {
-    this.rentalsList = [];
-  }
+
+
 }
